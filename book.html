@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Versatile Liberation — Book a Service</title>
+  <meta name="description" content="Book a service at Versatile Liberation via WhatsApp.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#maincontent">Skip to content</a>
+
+  <header role="banner">
+    <h1 class="brand">Versatile Liberation</h1>
+    <nav aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="book.html">Book</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main id="maincontent" role="main">
+    <section class="section" aria-labelledby="book-heading">
+      <h2 id="book-heading">Book a Service</h2>
+
+      <form id="bookingForm" novalidate>
+        <div class="form-grid">
+          <div>
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" required aria-required="true" placeholder="Your full name">
+          </div>
+
+          <div>
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" inputmode="tel" pattern="^\\+?\\d{9,15}$" required aria-required="true" placeholder="+27 81 242 4113">
+            <small style="color:#666;display:block;margin-top:6px;">Include country code, e.g. +27</small>
+          </div>
+
+          <div class="full">
+            <label for="service">Service</label>
+            <select id="service" name="service" required>
+              <option value="Re-Upholstery">Re-Upholstery</option>
+              <option value="Custom Furniture">Custom Furniture</option>
+              <option value="Foam Replacement">Foam Replacement</option>
+              <option value="Fabric Change">Fabric Change</option>
+            </select>
+          </div>
+
+          <div class="full">
+            <label for="message">Message (optional)</label>
+            <textarea id="message" name="message" rows="4" placeholder="Tell us about your furniture"></textarea>
+          </div>
+
+          <div class="full" aria-live="polite">
+            <button type="submit" id="submitBtn">Send Booking via WhatsApp</button>
+          </div>
+        </div>
+      </form>
+
+      <p id="bookingFeedback" aria-live="polite" class="feedback"></p>
+    </section>
+  </main>
+
+  <a class="whatsapp" href="https://wa.me/27812424113" target="_blank" rel="noopener noreferrer" aria-label="Open WhatsApp chat">WhatsApp</a>
+  <footer role="contentinfo">© <span id="year"></span> Versatile Liberation | South Africa</footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script src="booking.js"></script>
+</body>
+</html>
